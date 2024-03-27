@@ -1,1 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #00325e;
+  color: #fde5e4;
+}
 
+button,
+label,
+input,
+h1,
+p,
+a {
+  font-family: "Reddit Mono";
+}
