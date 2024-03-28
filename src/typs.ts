@@ -1,7 +1,7 @@
 export type Player = {
   name: string;
   gameTiles: gameTile[];
-  playerBattleships: battleship[];
+  playerBattleships: Battleship[];
 };
 
 export type gameTile = {
@@ -11,7 +11,7 @@ export type gameTile = {
   isPicked: boolean;
 };
 
-export type battleship = {
+export type Battleship = {
   name: string;
   hits: number;
   loc: gameTile[];

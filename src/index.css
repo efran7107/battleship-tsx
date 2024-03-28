@@ -10,6 +10,15 @@ label,
 input,
 h1,
 p,
+li,
 a {
   font-family: "Reddit Mono";
+
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }

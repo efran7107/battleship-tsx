@@ -1,4 +1,5 @@
 import { Player } from "../typs";
+import "../styles/PlayerBoard.css";
 
 export const PlayerBoard = ({ player }: { player: Player }) => {
   return (
@@ -11,9 +12,9 @@ export const PlayerBoard = ({ player }: { player: Player }) => {
           ))}
         </ul>
       </div>
-      <div className="playerWaters">
+      <div className="player-waters">
         {player.gameTiles.map((tile) => (
-          <button>{tile.loc}</button>
+          <button disabled={tile.isPicked}>{tile.loc}</button>
         ))}
       </div>
     </div>

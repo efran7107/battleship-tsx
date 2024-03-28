@@ -1,6 +1,12 @@
-import { ReactNode, createContext, useContext, useState } from "react";
-import { battleship, gameTile, Player } from "../typs";
-import { generateTiles } from "../Functions/functions";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { Battleship, gameTile, Player } from "../typs";
+import { generateTiles, getShips, setCpuShips } from "../Functions/functions";
 
 type TPlayerProvider = {
   player: Player;
@@ -15,13 +21,14 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
   const [player, setPlayer] = useState<Player>({
     name: "",
     gameTiles: generateTiles(),
-    playerBattleships: [],
+    playerBattleships: getShips(),
   });
   const [enemy, setEnemy] = useState<Player>({
     name: "cpu",
-    gameTiles: generateTiles(),
-    playerBattleships: [],
+    ...setCpuShips(generateTiles(), getShips()),
   });
+
+  console.log(enemy);
 
   const [isNameSet, setIsNameSet] = useState(false);
 
